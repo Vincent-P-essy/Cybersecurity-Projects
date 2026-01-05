@@ -1,0 +1,9 @@
+# AngelaMos | 2026
+
+*.cache
+*.coverage
+.env
+.angelusvigil/
+.worktrees/
+
+PROJECTS/beginner/hash-cracker/docs/
