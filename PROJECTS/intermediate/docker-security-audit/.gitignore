@@ -1,0 +1,12 @@
+# ©Vincent Plessy | 2026 | Vincent-P-essy
+# Binaries
+*.exe
+*.test
+bin/
+
+# OS stuff
+.DS_Store
+
+# IDE stuff
+.vscode/
+.idea/
