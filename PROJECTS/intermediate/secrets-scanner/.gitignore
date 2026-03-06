@@ -1,0 +1,11 @@
+# Vincent Plessy | 2026
+# .gitignore
+
+bin/
+*.exe
+*.test
+*.out
+coverage.out
+coverage.html
+.portia-cache/
+.portia.toml
