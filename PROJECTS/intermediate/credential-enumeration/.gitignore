@@ -1,0 +1,10 @@
+# ©Vincent Plessy | 2026
+# .gitignore
+
+docs/
+bin/
+nimcache/
+credenum
+*.exe
+*.out
+tests/docker/planted/
