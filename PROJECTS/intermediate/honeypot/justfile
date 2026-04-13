@@ -1,0 +1,51 @@
+default:
+    @just --list
+
+# Start the full stack
+up:
+    docker compose up -d --build
+
+# Stop and remove containers
+down:
+    docker compose down
+
+# Show logs
+logs service="":
+    docker compose logs -f {{ service }}
+
+# Tail backend logs only
+backend-logs:
+    docker compose logs -f backend
+
+# Rebuild without cache
+rebuild:
+    docker compose build --no-cache && docker compose up -d
+
+# Show live event stream
+stream:
+    curl -N http://localhost:8000/api/events/stream
+
+# Show current stats
+stats:
+    curl -s http://localhost:8000/api/stats | python3 -m json.tool
+
+# Clear all recorded events
+clear-events:
+    curl -s -X DELETE http://localhost:8000/api/events
+
+# Run backend locally (requires postgres running)
+dev-backend:
+    cd backend && uvicorn app.main:app --reload --port 8000
+
+# Run frontend dev server
+dev-frontend:
+    cd frontend && npm run dev
+
+# Simulate an SSH brute force (requires nmap/hydra for real test, uses curl here)
+simulate-ssh:
+    @echo "Connect to localhost:22 with any SSH client to trigger honeypot"
+    @echo "  ssh root@localhost -p 22"
+
+# Check health
+health:
+    curl -s http://localhost:8000/api/health | python3 -m json.tool
