@@ -79,7 +79,7 @@ class _FakeShell(asyncssh.SSHServerSession):
     def connection_made(self, chan: asyncssh.SSHServerChannel) -> None:
         self._chan = chan
         motd = _MOTD.format(dt=datetime.now().strftime("%a %b %d %H:%M:%S %Y"))
-        chan.write(motd + f"\nroot@prod-server:~# ")
+        chan.write(motd + "\nroot@prod-server:~# ")
 
     def data_received(self, data: str, datatype: asyncssh.DataType) -> None:
         self._buf += data

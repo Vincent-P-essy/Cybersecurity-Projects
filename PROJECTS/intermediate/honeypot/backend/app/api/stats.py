@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
-from sqlalchemy import select, func, text
+from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..database import get_db
-from ..models import HoneypotEvent, ServiceType
+from ..models import HoneypotEvent
 
 router = APIRouter(prefix="/api/stats", tags=["stats"])
 
