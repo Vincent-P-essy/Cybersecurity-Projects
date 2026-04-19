@@ -32,6 +32,10 @@
 - **Audit logging** — every state change recorded with actor, timestamp, and reason
 - **Security hardened** — Argon2id password hashing, rate limiting, input validation, SQL injection prevention via SQLAlchemy ORM
 
+## Preview
+
+![Bug Bounty Platform](docs/screenshots/dashboard.png)
+
 ## Demo
 
 Live instance: **[bugbounty.Vincent-P-essy.com](https://bugbounty.Vincent-P-essy.com/)**

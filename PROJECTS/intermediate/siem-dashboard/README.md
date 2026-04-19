@@ -33,6 +33,10 @@
 - **Alert lifecycle** — acknowledge → investigate → resolve → false positive with audit trail
 - **Filterable, paginated log viewer** with per-field drill-down
 
+## Preview
+
+![SIEM Dashboard](docs/screenshots/dashboard.png)
+
 ## Demo
 
 Live instance: **[siem.Vincent-P-essy.com](https://siem.Vincent-P-essy.com/)**

@@ -35,6 +35,10 @@
 - **Live dashboard** via Server-Sent Events — events appear in real time, no polling
 - **Statistics panel** — top IPs, most-used credentials, attack breakdown by country and service
 
+## Preview
+
+![Honeypot Dashboard](docs/screenshots/dashboard.png)
+
 ## Quick Start
 
 ```bash
