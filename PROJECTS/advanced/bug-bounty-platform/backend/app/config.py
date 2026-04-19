@@ -13,6 +13,7 @@ from pydantic import (
     RedisDsn,
     SecretStr,
     PostgresDsn,
+    field_validator,
     model_validator,
 )
 from pydantic_settings import (
@@ -155,6 +156,11 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = Field(default = 7, ge = 1, le = 30)
 
     ADMIN_EMAIL: EmailStr | None = None
+
+    @field_validator("ADMIN_EMAIL", mode="before")
+    @classmethod
+    def empty_str_to_none(cls, v: str | None) -> str | None:
+        return None if v == "" else v
 
     REDIS_URL: RedisDsn | None = None
 
