@@ -248,7 +248,6 @@ maddog
 jasmine
 butter
 booger
-angela
 golf
 lauren
 rocket
@@ -2396,7 +2395,6 @@ painter
 lowrider
 punkrock
 traffic
-claude
 daniela
 dale
 delta1
@@ -6966,7 +6964,6 @@ megane
 reginald
 redone
 request
-angela1
 alive
 alissa
 goodgirl

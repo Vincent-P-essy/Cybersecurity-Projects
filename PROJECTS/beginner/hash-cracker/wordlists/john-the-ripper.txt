@@ -252,7 +252,6 @@ a12345
 a1b2c3d4
 alpha
 amber
-angela
 angie
 archie
 asdf
@@ -1871,8 +1870,6 @@ civic
 clapton
 clarkson
 class
-claude
-claudel
 cleo
 cliff
 clock

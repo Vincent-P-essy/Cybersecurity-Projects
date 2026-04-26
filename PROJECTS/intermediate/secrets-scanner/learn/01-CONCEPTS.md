@@ -45,7 +45,7 @@ Portia implements pre-commit scanning, which catches secrets before they enter g
 
 ### What It Is
 
-Shannon entropy (named after Claude Shannon, the father of information theory) measures the randomness of a string. It answers the question: "How surprised would I be by each character?" English text has low entropy (you can predict the next letter). An API key like `xK9mP2vL5nQ8jR3t` has high entropy (each character is unpredictable).
+Shannon entropy measures the randomness of a string. It answers the question: "How surprised would I be by each character?" English text has low entropy (you can predict the next letter). An API key like `xK9mP2vL5nQ8jR3t` has high entropy (each character is unpredictable).
 
 The formula: `H = -Σ p(x) * log₂(p(x))`
 
