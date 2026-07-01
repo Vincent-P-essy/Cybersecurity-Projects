@@ -2,7 +2,7 @@
 [![Lint & Type Check](https://github.com/Vincent-P-essy/Cybersecurity-Projects/actions/workflows/lint.yml/badge.svg)](https://github.com/Vincent-P-essy/Cybersecurity-Projects/actions/workflows/lint.yml)
 
 <p align="center">
-  <h1 align="center">👨‍💻 Vincent Plessy</h1>
+  <h1 align="center"> Vincent Plessy</h1>
   <p align="center"><strong>Cybersecurity • Systems • DevOps</strong></p>
 
   <img src="https://img.shields.io/badge/Linux-✔-blue">
