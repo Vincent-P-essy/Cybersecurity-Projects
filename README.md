@@ -17,25 +17,25 @@
 </p>
 
 <p align="center">
-  💼 Open to Cybersecurity / DevOps Apprenticeship
+   Open to Cybersecurity / DevOps Apprenticeship
 </p>
 
 ---
 
-## 👨‍💻 About Me
+##  About Me
 
 Computer Science student (L3) passionate about cybersecurity, systems, and low-level programming.
 
-- 🎯 Goal: Cybersecurity / DevOps apprenticeship
-- 🧠 Interests: Offensive security, defensive systems, infrastructure
-- ⚙️ Strong focus on practical, real-world projects
+-  Goal: Cybersecurity / DevOps apprenticeship
+-  Interests: Offensive security, defensive systems, infrastructure
+-  Strong focus on practical, real-world projects
 
 ---
 
-## 🚀 Featured Projects
+##  Featured Projects
 
-### 🤖 AI Threat Detection
-[➡️ View Project](./PROJECTS/advanced/ai-threat-detection)
+###  AI Threat Detection
+[ View Project](./PROJECTS/advanced/ai-threat-detection)
 
 ML-powered threat detection engine analyzing nginx logs in real time with a 3-model ensemble (Autoencoder + Random Forest + Isolation Forest). Detects SQLi, XSS, path traversal, Log4Shell, and SSRF. Auto-trains on deployment.
 
@@ -47,8 +47,8 @@ ML-powered threat detection engine analyzing nginx logs in real time with a 3-mo
 
 ---
 
-### 🐛 Bug Bounty Platform
-[➡️ View Project](./PROJECTS/advanced/bug-bounty-platform) • [🌐 Live Demo](https://bugbounty.Vincent-P-essy.com)
+###  Bug Bounty Platform
+[ View Project](./PROJECTS/advanced/bug-bounty-platform) • [ Live Demo](https://bugbounty.Vincent-P-essy.com)
 
 Production-ready enterprise bug bounty platform with RBAC (Researcher / Company / Admin), CVSS scoring, report triage, bounty award workflows, and full audit logging. ~7,000 lines of backend.
 
@@ -60,8 +60,8 @@ Production-ready enterprise bug bounty platform with RBAC (Researcher / Company 
 
 ---
 
-### 🔒 Encrypted P2P Chat
-[➡️ View Project](./PROJECTS/advanced/encrypted-p2p-chat)
+###  Encrypted P2P Chat
+[ View Project](./PROJECTS/advanced/encrypted-p2p-chat)
 
 End-to-end encrypted peer-to-peer chat implementing the Signal Protocol (Double Ratchet + X3DH). WebAuthn/Passkey authentication, forward secrecy, break-in recovery, real-time WebSocket messaging.
 
@@ -72,8 +72,8 @@ End-to-end encrypted peer-to-peer chat implementing the Signal Protocol (Double 
 
 ---
 
-### 📊 SIEM Dashboard
-[➡️ View Project](./PROJECTS/intermediate/siem-dashboard) • [🌐 Live Demo](https://siem.Vincent-P-essy.com)
+###  SIEM Dashboard
+[ View Project](./PROJECTS/intermediate/siem-dashboard) • [ Live Demo](https://siem.Vincent-P-essy.com)
 
 Full-stack SIEM with real-time log correlation, three rule types (Threshold, Sequence, Aggregation), four MITRE ATT&CK attack playbooks, and a live alert feed via Server-Sent Events.
 
@@ -85,8 +85,8 @@ Full-stack SIEM with real-time log correlation, three rule types (Threshold, Seq
 
 ---
 
-### 🍯 Canaris — Honeypot
-[➡️ View Project](./PROJECTS/intermediate/honeypot)
+###  Canaris — Honeypot
+[ View Project](./PROJECTS/intermediate/honeypot)
 
 Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credentials and commands in real time. Threat scoring 0–100 with MITRE ATT&CK pattern mapping, GeoIP enrichment, and a live React dashboard.
 
@@ -97,9 +97,9 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 ---
 
-## 📂 All Projects
+##  All Projects
 
-### 🟢 Beginner
+###  Beginner
 
 | Project | Description | Tech |
 |---------|-------------|------|
@@ -116,7 +116,7 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 | [Linux CIS Auditor](./PROJECTS/beginner/linux-cis-hardening-auditor) | 104-control CIS Benchmark compliance auditor with HTML/JSON reports | Bash |
 | [Vulnerability Scanner](./PROJECTS/beginner/simple-vulnerability-scanner) | Python dependency updater with CVE detection via OSV.dev | Go |
 
-### 🟡 Intermediate
+###  Intermediate
 
 | Project | Description | Tech |
 |---------|-------------|------|
@@ -129,7 +129,7 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 | [SIEM Dashboard](./PROJECTS/intermediate/siem-dashboard) [![Live](https://img.shields.io/badge/Live-siem-green?style=flat)](https://siem.Vincent-P-essy.com) | Real-time SIEM with log correlation and MITRE ATT&CK playbooks | Python / React |
 | [Credential Enumeration](./PROJECTS/intermediate/credential-enumeration) | Post-access credential exposure detector for Linux systems | Nim |
 
-### 🔴 Advanced
+###  Advanced
 
 | Project | Description | Tech |
 |---------|-------------|------|
@@ -141,7 +141,7 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
@@ -160,7 +160,7 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 ---
 
-## 📊 Stats
+##  Stats
 
 ![Repo Size](https://img.shields.io/github/repo-size/Vincent-P-essy/Cybersecurity-Projects)
 ![Last Commit](https://img.shields.io/github/last-commit/Vincent-P-essy/Cybersecurity-Projects)
@@ -168,7 +168,7 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 ---
 
-## 📫 Contact
+##  Contact
 
-- 📧 Email: vincent.plessy12@gmail.com
-- 💻 GitHub: https://github.com/Vincent-P-essy
+- Email: vincent.plessy12@gmail.com
+- GitHub: https://github.com/Vincent-P-essy
