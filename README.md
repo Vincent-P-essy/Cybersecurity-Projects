@@ -5,8 +5,7 @@
   <h1 align="center"> Vincent Plessy</h1>
   <p align="center"><strong>Cybersecurity • Systems • DevOps</strong></p>
 
-  <img src="https://img.shields.io/badge/Linux-✔-blue"> <img src="https://img.shields.io/badge/Security-✔-red"> <img src="https://img.shields.io/badge/DevOps-✔-orange">
-  <img src="https://img.shields.io/badge/Projects-✔-green">
+  <img src="https://img.shields.io/badge/Linux-✔-blue"> <img src="https://img.shields.io/badge/Security-✔-red"> <img src="https://img.shields.io/badge/DevOps-✔-orange"> <img src="https://img.shields.io/badge/Projects-✔-green">
 
   <br>
 
