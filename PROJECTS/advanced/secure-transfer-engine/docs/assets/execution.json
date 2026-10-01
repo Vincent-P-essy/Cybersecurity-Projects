@@ -1,0 +1,20 @@
+{
+  "demo": {
+    "command": [
+      "bash",
+      "run.sh",
+      "demo"
+    ],
+    "output": "Duplicate request: one debit, one credit\nReceipt[key=payment-001, debit=Entry[account=alice-eur, delta=-1500], credit=Entry[account=bob-eur, delta=1500]]\nCross-owner transfer: rejected\nAfter restart: alice=8500 cents, bob=3500 cents",
+    "exit_code": 0
+  },
+  "tests": {
+    "command": [
+      "bash",
+      "run.sh",
+      "test"
+    ],
+    "output": "PASS balanced entries\nPASS owner boundary\nPASS invalid amounts and identifiers\nPASS idempotency and conflict\nPASS overflow is atomic\nPASS replay retains balances and idempotency\nPASS concurrent duplicate delivery\nPASS concurrent overdraft prevention\nPASS randomized conservation\nPASS single writer\nPASS checksum corruption rejected\nPASS torn frame rejected\nPASS oversized frame rejected\nPASS closed instance rejects operations\n14 scenarios passed",
+    "exit_code": 0
+  }
+}

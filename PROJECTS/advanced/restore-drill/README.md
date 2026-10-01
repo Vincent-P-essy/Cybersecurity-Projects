@@ -5,6 +5,13 @@ creates a consistent SQLite snapshot, authenticates its manifest with HMAC-SHA-2
 then restores a copy into an isolated temporary directory and checks database
 integrity, schema, row counts and optional business invariants.
 
+## Execution capture
+
+![Restore Drill demonstration and passing tests](docs/assets/execution.png)
+
+Rendered from actual demo and test output. The [raw transcript](docs/assets/execution.json)
+and [capture script](../../../tools/project-screenshots/README.md) make this image reproducible.
+
 ## Run the demonstration
 
 Requires Linux and Python 3.11+; no third-party packages or database server.

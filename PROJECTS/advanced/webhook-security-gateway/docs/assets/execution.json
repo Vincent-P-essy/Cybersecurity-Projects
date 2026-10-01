@@ -1,0 +1,23 @@
+{
+  "demo": {
+    "command": [
+      "python3",
+      "demo.py"
+    ],
+    "output": "accepted\nduplicate\nAltered body: rejected (401)\nWorker claimed event, then stopped before acknowledgement\nRecovered attempt: 2\nStale acknowledgement: False\nCurrent acknowledgement: True",
+    "exit_code": 0
+  },
+  "tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-q"
+    ],
+    "output": "----------------------------------------------------------------------\nRan 16 tests in 0.047s\n\nOK",
+    "exit_code": 0
+  }
+}

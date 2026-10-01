@@ -5,6 +5,13 @@ identifier to its signature, and commits the receipt and delivery queue in one
 SQLite transaction. A worker that stops before acknowledgement leaves an event
 that can be claimed again after its lease expires.
 
+## Execution capture
+
+![Webhook Security Gateway demonstration and passing tests](docs/assets/execution.png)
+
+Rendered from actual demo and test output. The [raw transcript](docs/assets/execution.json)
+and [capture script](../../../tools/project-screenshots/README.md) make this image reproducible.
+
 ## Run
 
 Python 3.11+ and the standard library only.

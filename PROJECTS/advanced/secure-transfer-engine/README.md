@@ -5,6 +5,13 @@ every accepted transfer has a matching debit and credit, retries do not debit
 twice, concurrent requests cannot overdraw an account, and a restart retains
 both balances and idempotency keys.
 
+## Execution capture
+
+![Secure Transfer Engine demonstration and passing tests](docs/assets/execution.png)
+
+Rendered from actual demo and test output. The [raw transcript](docs/assets/execution.json)
+and [capture script](../../../tools/project-screenshots/README.md) make this image reproducible.
+
 ## Run
 
 Requires a Java 17+ runtime with the `jdk.compiler` module. No Maven, framework,

@@ -1,0 +1,23 @@
+{
+  "demo": {
+    "command": [
+      "python3",
+      "demo.py"
+    ],
+    "output": "Original fixture removed; restoring only from the snapshot\n{\n  \"status\": \"passed\",\n  \"database_bytes\": 8192,\n  \"schema_sha256\": \"9f3ce89349d5330c18568f8d477939c60cd207ed4aa21d97bd07a9f532996c5b\",\n  \"table_rows\": {\n    \"invoices\": 1\n  },\n  \"business_checks\": [\n    {\n      \"name\": \"invoice total\",\n      \"status\": \"passed\"\n    }\n  ],\n  \"restore_seconds\": 0.000829\n}\nAltered snapshot: rejected",
+    "exit_code": 0
+  },
+  "tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-q"
+    ],
+    "output": "----------------------------------------------------------------------\nRan 15 tests in 0.027s\n\nOK",
+    "exit_code": 0
+  }
+}
