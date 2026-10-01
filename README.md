@@ -135,6 +135,9 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 | [Bug Bounty Platform](./PROJECTS/advanced/bug-bounty-platform) [![Live](https://img.shields.io/badge/Live-bugbounty-green?style=flat)](https://bugbounty.Vincent-P-essy.com) | Full bug bounty platform with RBAC, CVSS scoring, and audit logging | Python / React |
 | [Encrypted P2P Chat](./PROJECTS/advanced/encrypted-p2p-chat) | Signal Protocol (Double Ratchet + X3DH) P2P chat with WebAuthn | Python / SolidJS |
 | [Reverse Proxy](./PROJECTS/advanced/haskell-reverse-proxy) | High-performance reverse proxy with security middleware | Haskell |
+| [Secure Transfer Engine](./PROJECTS/advanced/secure-transfer-engine) | Durable Java transfer core with balanced postings, owner authorization, concurrent overdraft prevention and idempotent retries | Java 17 |
+| [Webhook Security Gateway](./PROJECTS/advanced/webhook-security-gateway) | HMAC-authenticated events, replay checks, producer-scoped deduplication and a transactional SQLite outbox | Python / SQLite |
+| [Restore Drill](./PROJECTS/advanced/restore-drill) | Authenticated SQLite snapshots and real restore rehearsals with integrity and business-invariant checks | Python / SQLite |
 
 ---
 
@@ -169,3 +172,4 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 - Email: vincent.plessy12@gmail.com
 - GitHub: https://github.com/Vincent-P-essy
+
