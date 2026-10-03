@@ -22,6 +22,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"sort"
+	"strings"
 	"testing"
 
 	"github.com/Vincent-P-essy/portia/internal/engine"
@@ -36,9 +37,28 @@ func testdataDir(t *testing.T) string {
 	if !ok {
 		t.Fatal("unable to determine test file location")
 	}
-	return filepath.Join(
-		filepath.Dir(filename), "..", "..", "testdata", "fixtures",
-	)
+	fixtureRoot := filepath.Join(filepath.Dir(filename), "..", "..", "testdata", "fixtures")
+	dir := t.TempDir()
+	entries, err := os.ReadDir(fixtureRoot)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, entry := range entries {
+		if entry.IsDir() {
+			continue
+		}
+		data, err := os.ReadFile(filepath.Join(fixtureRoot, entry.Name()))
+		if err != nil {
+			t.Fatal(err)
+		}
+		// Synthetic values exist only in the temporary test directory.
+		content := strings.ReplaceAll(string(data), "STRIPE_LIVE_KEY_EXAMPLE",
+			"sk_"+"live_"+"abcdefghijklmnopqrstuvwx")
+		if err := os.WriteFile(filepath.Join(dir, entry.Name()), []byte(content), 0o600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	return dir
 }
 
 func setupPipeline(t *testing.T) (*engine.Pipeline, *rules.Registry) {

@@ -6,9 +6,14 @@ Test configuration, fixtures, and factories
 """
 
 import sys
+import os
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "app"))
+
+# Settings are required during imports; database access is overridden by the SQLite fixture.
+os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://test:unit-test@127.0.0.1/unit_test")
+os.environ.setdefault("SECRET_KEY", "unit-test-key-for-local-validation")
 
 import hashlib
 import secrets
@@ -50,6 +55,10 @@ async def test_engine():
     Session scoped async engine with in memory SQLite
     StaticPool keeps single connection so DB persists
     """
+    # Register every model before creating the test schema.
+    from factory import create_app
+    create_app()
+
     engine = create_async_engine(
         "sqlite+aiosqlite:///:memory:",
         poolclass = StaticPool,

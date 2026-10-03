@@ -31,20 +31,18 @@ package integration_test
 
 import (
 	"context"
-	"path/filepath"
 	"testing"
 
 	"github.com/Vincent-P-essy/docksec/internal/analyzer"
 	"github.com/Vincent-P-essy/docksec/internal/finding"
+	"github.com/Vincent-P-essy/docksec/internal/testfixtures"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 func TestDockerfileAnalyzer_BadSecrets(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"dockerfiles",
 		"bad-secrets.Dockerfile",
 	)
@@ -108,9 +106,7 @@ func TestDockerfileAnalyzer_BadSecrets(t *testing.T) {
 
 func TestDockerfileAnalyzer_BadRootUser(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"dockerfiles",
 		"bad-root-user.Dockerfile",
 	)
@@ -145,9 +141,7 @@ func TestDockerfileAnalyzer_BadRootUser(t *testing.T) {
 
 func TestDockerfileAnalyzer_BadPrivileged(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"dockerfiles",
 		"bad-privileged.Dockerfile",
 	)
@@ -182,9 +176,7 @@ func TestDockerfileAnalyzer_BadPrivileged(t *testing.T) {
 
 func TestDockerfileAnalyzer_BadAddCommand(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"dockerfiles",
 		"bad-add-command.Dockerfile",
 	)
@@ -219,9 +211,7 @@ func TestDockerfileAnalyzer_BadAddCommand(t *testing.T) {
 
 func TestDockerfileAnalyzer_GoodMinimal(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"dockerfiles",
 		"good-minimal.Dockerfile",
 	)
@@ -274,9 +264,7 @@ func TestDockerfileAnalyzer_GoodMinimal(t *testing.T) {
 
 func TestDockerfileAnalyzer_GoodSecurity(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"dockerfiles",
 		"good-security.Dockerfile",
 	)
@@ -359,9 +347,7 @@ func TestDockerfileAnalyzer_AllFiles(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			ctx := context.Background()
-			path := filepath.Join(
-				"..",
-				"testdata",
+			path := testfixtures.Path(t,
 				"dockerfiles",
 				tc.file,
 			)

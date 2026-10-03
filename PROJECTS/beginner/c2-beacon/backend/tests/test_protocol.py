@@ -14,8 +14,8 @@ Tests:
 
 import pytest
 
-from core.models import CommandType
-from core.protocol import Message, MessageType, pack, unpack
+from app.core.models import CommandType
+from app.core.protocol import Message, MessageType, pack, unpack
 
 TEST_KEY = "test-protocol-key"
 
@@ -118,7 +118,7 @@ class TestUnpackValidation:
         """
         Valid base64 but invalid JSON after XOR raises ValueError
         """
-        from core.encoding import encode
+        from app.core.encoding import encode
 
         encoded = encode("this is not json", TEST_KEY)
         with pytest.raises(ValueError, match="Invalid protocol message"):
@@ -128,7 +128,7 @@ class TestUnpackValidation:
         """
         JSON without 'type' field raises ValueError
         """
-        from core.encoding import encode
+        from app.core.encoding import encode
 
         encoded = encode('{"payload": {}}', TEST_KEY)
         with pytest.raises(ValueError, match="Invalid protocol message"):
@@ -138,7 +138,7 @@ class TestUnpackValidation:
         """
         Unknown message type raises ValueError
         """
-        from core.encoding import encode
+        from app.core.encoding import encode
 
         encoded = encode(
             '{"type": "BOGUS", "payload": {}}', TEST_KEY

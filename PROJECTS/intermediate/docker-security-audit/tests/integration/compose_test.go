@@ -35,20 +35,18 @@ package integration_test
 
 import (
 	"context"
-	"path/filepath"
 	"testing"
 
 	"github.com/Vincent-P-essy/docksec/internal/analyzer"
 	"github.com/Vincent-P-essy/docksec/internal/finding"
+	"github.com/Vincent-P-essy/docksec/internal/testfixtures"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 func TestComposeAnalyzer_BadDockerSocket(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"compose",
 		"bad-docker-socket.yml",
 	)
@@ -151,9 +149,7 @@ func TestComposeAnalyzer_BadDockerSocket(t *testing.T) {
 
 func TestComposeAnalyzer_BadPrivileged(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"compose",
 		"bad-privileged.yml",
 	)
@@ -211,7 +207,7 @@ func TestComposeAnalyzer_BadPrivileged(t *testing.T) {
 
 func TestComposeAnalyzer_BadCaps(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join("..", "testdata", "compose", "bad-caps.yml")
+	path := testfixtures.Path(t, "compose", "bad-caps.yml")
 
 	a := analyzer.NewComposeAnalyzer(path)
 	findings, err := a.Analyze(ctx)
@@ -281,7 +277,7 @@ func TestComposeAnalyzer_BadCaps(t *testing.T) {
 
 func TestComposeAnalyzer_BadMounts(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join("..", "testdata", "compose", "bad-mounts.yml")
+	path := testfixtures.Path(t, "compose", "bad-mounts.yml")
 
 	a := analyzer.NewComposeAnalyzer(path)
 	findings, err := a.Analyze(ctx)
@@ -377,9 +373,7 @@ func TestComposeAnalyzer_BadMounts(t *testing.T) {
 
 func TestComposeAnalyzer_BadSecrets(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"compose",
 		"bad-secrets.yml",
 	)
@@ -448,9 +442,7 @@ func TestComposeAnalyzer_BadSecrets(t *testing.T) {
 
 func TestComposeAnalyzer_BadNoLimits(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"compose",
 		"bad-no-limits.yml",
 	)
@@ -520,9 +512,7 @@ func TestComposeAnalyzer_BadNoLimits(t *testing.T) {
 
 func TestComposeAnalyzer_GoodProduction(t *testing.T) {
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"compose",
 		"good-production.yml",
 	)
@@ -647,7 +637,7 @@ func TestComposeAnalyzer_AllFiles(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			ctx := context.Background()
-			path := filepath.Join("..", "testdata", "compose", tc.file)
+			path := testfixtures.Path(t, "compose", tc.file)
 
 			a := analyzer.NewComposeAnalyzer(path)
 			findings, err := a.Analyze(ctx)

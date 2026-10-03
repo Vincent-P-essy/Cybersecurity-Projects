@@ -77,7 +77,7 @@ func (r *JUnitReporter) Report(findings finding.Collection) error {
 
 	report := r.buildReport(findings)
 
-	_, _ = fmt.Fprintln(r.w, xml.Header)
+	_, _ = fmt.Fprint(r.w, xml.Header)
 	enc := xml.NewEncoder(r.w)
 	enc.Indent("", "  ")
 

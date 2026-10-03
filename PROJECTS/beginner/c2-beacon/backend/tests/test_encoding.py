@@ -13,7 +13,7 @@ Tests:
 """
 
 
-from core.encoding import decode, encode, xor_bytes
+from app.core.encoding import decode, encode, xor_bytes
 
 
 class TestXorBytes:

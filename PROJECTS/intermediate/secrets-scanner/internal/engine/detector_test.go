@@ -29,6 +29,8 @@ import (
 	"github.com/Vincent-P-essy/portia/pkg/types"
 )
 
+const syntheticStripeKey = "sk_" + "live_" + "abcdefghijklmnopqrstuvwx"
+
 func testRegistry() *rules.Registry {
 	reg := rules.NewRegistry()
 	reg.Register(&types.Rule{
@@ -92,7 +94,7 @@ func TestDetectStripeKey(t *testing.T) {
 	d := NewDetector(testRegistry())
 
 	chunk := types.Chunk{ //nolint:gosec
-		Content:   `STRIPE_KEY=STRIPE_LIVE_KEY_EXAMPLE`,
+		Content:   "STRIPE_KEY=" + syntheticStripeKey,
 		FilePath:  "env.sh",
 		LineStart: 10,
 	}
@@ -101,7 +103,7 @@ func TestDetectStripeKey(t *testing.T) {
 	require.Len(t, findings, 1)
 	assert.Equal(t, "test-stripe-key", findings[0].RuleID)
 	assert.Equal(t,
-		"STRIPE_LIVE_KEY_EXAMPLE",
+		syntheticStripeKey,
 		findings[0].Secret,
 	)
 }
@@ -170,7 +172,7 @@ func TestDetectMultipleFindings(t *testing.T) {
 
 	chunk := types.Chunk{
 		Content: `aws_key = "AKIAIOSFODNN7EXAMPLE"` + "\n" +
-			`stripe = STRIPE_LIVE_KEY_EXAMPLE`,
+			"stripe = " + syntheticStripeKey,
 		FilePath:  "config.py",
 		LineStart: 1,
 	}

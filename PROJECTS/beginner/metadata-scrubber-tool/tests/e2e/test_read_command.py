@@ -76,7 +76,7 @@ def test_read_command_file_not_found():
     result = runner.invoke(app, ["read", "ghost_file.jpg"])
 
     assert result.exit_code == 2
-    assert "Invalid value for 'FILE_PATH'" in result.stderr
+    assert "ghost_file.jpg" in result.stderr
     assert "does not exist" in result.stderr
 
 

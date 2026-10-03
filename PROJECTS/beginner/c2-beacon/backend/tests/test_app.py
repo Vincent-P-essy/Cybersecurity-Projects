@@ -17,10 +17,10 @@ from pathlib import Path
 import pytest
 from httpx import ASGITransport, AsyncClient
 
-from beacon.registry import BeaconRegistry
-from beacon.tasking import TaskManager
-from database import init_db
-from ops.manager import OpsManager
+from app.beacon.registry import BeaconRegistry
+from app.beacon.tasking import TaskManager
+from app.database import init_db
+from app.ops.manager import OpsManager
 
 
 @pytest.fixture
@@ -30,11 +30,11 @@ async def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> AsyncClient
     """
     test_db_path = tmp_path / "test.db"
 
-    import config
+    import app.config as config
     monkeypatch.setattr(config.settings, "DATABASE_PATH", test_db_path)
     monkeypatch.setattr(config.settings, "APP_NAME", "C2 Beacon Server")
 
-    import database
+    import app.database as database
     monkeypatch.setattr(database, "settings", config.settings)
 
     await init_db()

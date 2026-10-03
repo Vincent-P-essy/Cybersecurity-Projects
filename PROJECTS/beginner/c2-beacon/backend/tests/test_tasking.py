@@ -18,9 +18,9 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from beacon.tasking import TaskManager
-from core.models import CommandType, TaskRecord, TaskResult
-from database import SCHEMA
+from app.beacon.tasking import TaskManager
+from app.core.models import CommandType, TaskRecord, TaskResult
+from app.database import SCHEMA
 
 
 @pytest.fixture

@@ -29,11 +29,11 @@ package e2e_test
 import (
 	"context"
 	"os"
-	"path/filepath"
 	"testing"
 
 	"github.com/Vincent-P-essy/docksec/internal/analyzer"
 	"github.com/Vincent-P-essy/docksec/internal/finding"
+	"github.com/Vincent-P-essy/docksec/internal/testfixtures"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -46,9 +46,7 @@ func TestE2E_DockerfileAnalysis(t *testing.T) {
 	ctx := context.Background()
 
 	t.Run("analyze bad-secrets.Dockerfile end-to-end", func(t *testing.T) {
-		path := filepath.Join(
-			"..",
-			"testdata",
+		path := testfixtures.Path(t,
 			"dockerfiles",
 			"bad-secrets.Dockerfile",
 		)
@@ -73,9 +71,7 @@ func TestE2E_DockerfileAnalysis(t *testing.T) {
 	})
 
 	t.Run("analyze good-security.Dockerfile end-to-end", func(t *testing.T) {
-		path := filepath.Join(
-			"..",
-			"testdata",
+		path := testfixtures.Path(t,
 			"dockerfiles",
 			"good-security.Dockerfile",
 		)
@@ -104,9 +100,7 @@ func TestE2E_ComposeAnalysis(t *testing.T) {
 	ctx := context.Background()
 
 	t.Run("analyze bad-docker-socket.yml end-to-end", func(t *testing.T) {
-		path := filepath.Join(
-			"..",
-			"testdata",
+		path := testfixtures.Path(t,
 			"compose",
 			"bad-docker-socket.yml",
 		)
@@ -134,9 +128,7 @@ func TestE2E_ComposeAnalysis(t *testing.T) {
 	})
 
 	t.Run("analyze good-production.yml end-to-end", func(t *testing.T) {
-		path := filepath.Join(
-			"..",
-			"testdata",
+		path := testfixtures.Path(t,
 			"compose",
 			"good-production.yml",
 		)
@@ -173,9 +165,7 @@ func TestE2E_MultipleFiles(t *testing.T) {
 		wantIssues bool
 	}{
 		{
-			path: filepath.Join(
-				"..",
-				"testdata",
+			path: testfixtures.Path(t,
 				"dockerfiles",
 				"bad-secrets.Dockerfile",
 			),
@@ -183,9 +173,7 @@ func TestE2E_MultipleFiles(t *testing.T) {
 			wantIssues: true,
 		},
 		{
-			path: filepath.Join(
-				"..",
-				"testdata",
+			path: testfixtures.Path(t,
 				"dockerfiles",
 				"good-minimal.Dockerfile",
 			),
@@ -193,9 +181,7 @@ func TestE2E_MultipleFiles(t *testing.T) {
 			wantIssues: false,
 		},
 		{
-			path: filepath.Join(
-				"..",
-				"testdata",
+			path: testfixtures.Path(t,
 				"compose",
 				"bad-privileged.yml",
 			),
@@ -203,9 +189,7 @@ func TestE2E_MultipleFiles(t *testing.T) {
 			wantIssues: true,
 		},
 		{
-			path: filepath.Join(
-				"..",
-				"testdata",
+			path: testfixtures.Path(t,
 				"compose",
 				"good-production.yml",
 			),
@@ -255,7 +239,7 @@ func TestE2E_FindingProperties(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	path := filepath.Join("..", "testdata", "compose", "bad-caps.yml")
+	path := testfixtures.Path(t, "compose", "bad-caps.yml")
 
 	a := analyzer.NewComposeAnalyzer(path)
 	findings, err := a.Analyze(ctx)
@@ -348,9 +332,7 @@ func TestE2E_SeverityFiltering(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	path := filepath.Join(
-		"..",
-		"testdata",
+	path := testfixtures.Path(t,
 		"compose",
 		"bad-docker-socket.yml",
 	)
@@ -401,9 +383,7 @@ func TestE2E_FileNotFound(t *testing.T) {
 	ctx := context.Background()
 
 	t.Run("nonexistent Dockerfile", func(t *testing.T) {
-		path := filepath.Join(
-			"..",
-			"testdata",
+		path := testfixtures.Path(t,
 			"dockerfiles",
 			"does-not-exist.Dockerfile",
 		)
@@ -416,9 +396,7 @@ func TestE2E_FileNotFound(t *testing.T) {
 	})
 
 	t.Run("nonexistent compose file", func(t *testing.T) {
-		path := filepath.Join(
-			"..",
-			"testdata",
+		path := testfixtures.Path(t,
 			"compose",
 			"does-not-exist.yml",
 		)

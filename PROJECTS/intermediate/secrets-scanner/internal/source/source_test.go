@@ -65,7 +65,7 @@ func TestDirectoryChunks(t *testing.T) {
 	dir := t.TempDir()
 	require.NoError(t, os.WriteFile( //nolint:gosec
 		filepath.Join(dir, "config.py"),
-		[]byte(`password = "STRIPE_LIVE_KEY_EXAMPLE"`+"\n"),
+		[]byte(`password = "`+"sk_"+"live_"+"abcdefghijklmnopqrstuvwx"+`"`+"\n"),
 		0o644,
 	))
 	require.NoError(t, os.WriteFile( //nolint:gosec
@@ -217,7 +217,7 @@ func TestGitChunks(t *testing.T) {
 
 	require.NoError(t, os.WriteFile( //nolint:gosec
 		filepath.Join(dir, "secret.py"),
-		[]byte(`api_key = "STRIPE_LIVE_KEY_EXAMPLE"`+"\n"),
+		[]byte(`api_key = "`+"sk_"+"live_"+"abcdefghijklmnopqrstuvwx"+`"`+"\n"),
 		0o644,
 	))
 	_, err = wt.Add("secret.py")

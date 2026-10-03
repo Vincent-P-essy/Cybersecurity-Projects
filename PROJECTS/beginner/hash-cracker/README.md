@@ -15,7 +15,7 @@
 ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 ```
 
-[#  Hash Cracker (C++)
+# Hash Cracker (C++)
 
 A multi-threaded hash cracking tool I developed to explore practical aspects of cybersecurity, password security, and performance optimization in C++.
 
@@ -61,3 +61,17 @@ Different attack modes can be combined:
 
 hashcracker --hash 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8 \
   --wordlist wordlists/10k-most-common.txt
+```
+
+## Build and test
+
+Requires a C++23 compiler with `std::generator` support (verified with GCC 14), CMake 3.25 or newer, OpenSSL development files and Boost.Program_options. CMake downloads the pinned GoogleTest dependency for the test target.
+
+```bash
+cmake -S . -B build -DCMAKE_CXX_COMPILER=g++-14 -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure
+./build/hashcracker --help
+```
+
+The tests exercise hash detection, dictionary and brute-force strategies, mutation rules and the engine using known test inputs.

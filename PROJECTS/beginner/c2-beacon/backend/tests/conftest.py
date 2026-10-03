@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from config import Settings
+from app.config import Settings
 
 
 @pytest.fixture

@@ -19,9 +19,9 @@ from unittest.mock import AsyncMock
 import aiosqlite
 import pytest
 
-from beacon.registry import BeaconRegistry
-from core.models import BeaconMeta
-from database import SCHEMA
+from app.beacon.registry import BeaconRegistry
+from app.core.models import BeaconMeta
+from app.database import SCHEMA
 
 
 @pytest.fixture

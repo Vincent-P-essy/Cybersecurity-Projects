@@ -202,8 +202,8 @@ func TestMaskSecret(t *testing.T) {
 			want:  "AKIA********7EXA",
 		},
 		"long secret": { //nolint:gosec
-			input: "STRIPE_LIVE_KEY_EXAMPLE",
-			want:  "sk_liv********************zdp7dc",
+			input: "012345abcdefghijklmnopqrstuvwxyz",
+			want:  "012345********************uvwxyz",
 		},
 	}
 

@@ -214,7 +214,7 @@ func (a *ComposeAnalyzer) checkVolumes(
 		if rules.IsDockerSocket(hostPath) {
 			loc := &finding.Location{Path: a.path, Line: volNode.Line}
 			f := finding.New("CIS-5.31", "Service '"+serviceName+"' mounts Docker socket", finding.SeverityCritical, target).
-				WithDescription("Mounting Docker socket gives the container full control over the Docker daemon.").
+				WithDescription("Mounting runtime socket " + hostPath + " exposes the privileged container runtime API.").
 				WithCategory(string(CategoryCompose)).
 				WithLocation(loc).
 				WithRemediation("Do not mount /var/run/docker.sock inside containers.")

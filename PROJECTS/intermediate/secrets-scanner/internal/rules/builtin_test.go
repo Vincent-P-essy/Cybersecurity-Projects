@@ -51,51 +51,51 @@ func TestBuiltinPatternMatches(t *testing.T) { //nolint:funlen,gocognit
 	// Tokens are split across string literals to avoid triggering static secret
 	// scanners (GitHub push protection) on test fixtures. The concatenation
 	// happens at compile time so tests behave identically.
-	ghPatClassic := "ghp_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"       //nolint:gosec
-	ghPatFine := "github_pat_" + "abcdefghijABCDEFGHIJKL_" +               //nolint:gosec
+	ghPatClassic := "ghp_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij" //nolint:gosec
+	ghPatFine := "github_pat_" + "abcdefghijABCDEFGHIJKL_" +        //nolint:gosec
 		"abcdefghij0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABC"
-	ghOAuth := "gho_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"            //nolint:gosec
-	ghAppToken := "ghs_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"         //nolint:gosec
-	ghRefresh := "ghr_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"          //nolint:gosec
-	gitlabPAT := "glpat-" + "xYz1234567890AbCdEfGh"                        //nolint:gosec
+	ghOAuth := "gho_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"              //nolint:gosec
+	ghAppToken := "ghs_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"           //nolint:gosec
+	ghRefresh := "ghr_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"            //nolint:gosec
+	gitlabPAT := "glpat-" + "xYz1234567890AbCdEfGh"                         //nolint:gosec
 	gitlabPipeline := "glptt-" + "abcdefghijklmnopqrstuvwxyz0123456789ABCD" //nolint:gosec
-	gitlabRunner := "glrt-" + "xYz1234567890AbCdEfGh"                      //nolint:gosec
+	gitlabRunner := "glrt-" + "xYz1234567890AbCdEfGh"                       //nolint:gosec
 	gcpAPIKey := "AIzaSy" + "Dabcdefghij1234567890KLMNOPQRSTUV"             //nolint:gosec
-	gcpOAuthSecret := "GOCSPX-" + "aBcDeFgHiJkLmNoPqRsTuVwXyZ01"          //nolint:gosec
-	stripeWebhook := "whsec_" + "MfKBGsXP8r7B2cGnQ9jT6KxL12AbCdEf"        //nolint:gosec
-	stripeRestrictedLive := "rk_live_" + "4eC39HqLyjWDarjtT1zdp7dc"        //nolint:gosec
+	gcpOAuthSecret := "GOCSPX-" + "aBcDeFgHiJkLmNoPqRsTuVwXyZ01"            //nolint:gosec
+	stripeWebhook := "whsec_" + "MfKBGsXP8r7B2cGnQ9jT6KxL12AbCdEf"          //nolint:gosec
+	stripeRestrictedLive := "rk_live_" + "4eC39HqLyjWDarjtT1zdp7dc"         //nolint:gosec
 	twilioAPIKey := "SK" + "1234567890abcdef1234567890abcdef"               //nolint:gosec
 	twilioSID := "AC" + "1234567890abcdef1234567890abcdef"                  //nolint:gosec
-	sendgridKey := "SG." + "aBcDeFgHiJkLmNoPqRsTuw" + "." +               //nolint:gosec
+	sendgridKey := "SG." + "aBcDeFgHiJkLmNoPqRsTuw" + "." +                 //nolint:gosec
 		"xYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMn"
-	shopifyAccessToken := "shpat_" + "abcdef0123456789abcdef0123456789"     //nolint:gosec
-	shopifyCustomApp := "shpca_" + "abcdef0123456789abcdef0123456789"       //nolint:gosec
-	shopifyPrivateApp := "shppa_" + "abcdef0123456789abcdef0123456789"      //nolint:gosec
-	shopifySharedSecret := "shpss_" + "abcdef0123456789abcdef0123456789"    //nolint:gosec
-	npmToken := "npm_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789"            //nolint:gosec
+	shopifyAccessToken := "shpat_" + "abcdef0123456789abcdef0123456789"             //nolint:gosec
+	shopifyCustomApp := "shpca_" + "abcdef0123456789abcdef0123456789"               //nolint:gosec
+	shopifyPrivateApp := "shppa_" + "abcdef0123456789abcdef0123456789"              //nolint:gosec
+	shopifySharedSecret := "shpss_" + "abcdef0123456789abcdef0123456789"            //nolint:gosec
+	npmToken := "npm_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789"                     //nolint:gosec
 	rubygemsKey := "rubygems_" + "abcdef0123456789abcdef0123456789abcdef0123456789" //nolint:gosec
-	dockerPAT := "dckr_pat_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZ01"             //nolint:gosec
-	vaultToken := "hvs." + "CAESIGH3YzJfaBcDeFgHiJkLmNoPqR"                //nolint:gosec
-	digitalOceanPAT := "dop_v1_" + "abcdef01234567890abcdef01234567890" +    //nolint:gosec
+	dockerPAT := "dckr_pat_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZ01"                       //nolint:gosec
+	vaultToken := "hvs." + "CAESIGH3YzJfaBcDeFgHiJkLmNoPqR"                         //nolint:gosec
+	digitalOceanPAT := "dop_v1_" + "abcdef01234567890abcdef01234567890" +           //nolint:gosec
 		"abcdef01234567890abcdef0123456"
-	linearAPIKey := "lin_api_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"      //nolint:gosec
-	dopplerToken := "dp.st." + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"        //nolint:gosec
-	grafanaSAToken := "glsa_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeF_12345678"       //nolint:gosec
-	grafanaCloudToken := "glc_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeF1"             //nolint:gosec
-	databricksToken := "dapi" + "1234567890abcdef1234567890abcdef"                  //nolint:gosec
-	huggingfaceToken := "hf_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJ"            //nolint:gosec
-	netlifyToken := "nfp_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"           //nolint:gosec
-	postmanAPIKey := "PMAK-" + "abcdef0123456789abcdef01-" +                       //nolint:gosec
+	linearAPIKey := "lin_api_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN" //nolint:gosec
+	dopplerToken := "dp.st." + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"   //nolint:gosec
+	grafanaSAToken := "glsa_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeF_12345678" //nolint:gosec
+	grafanaCloudToken := "glc_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeF1"       //nolint:gosec
+	databricksToken := "dapi" + "1234567890abcdef1234567890abcdef"          //nolint:gosec
+	huggingfaceToken := "hf_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJ"      //nolint:gosec
+	netlifyToken := "nfp_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"     //nolint:gosec
+	postmanAPIKey := "PMAK-" + "abcdef0123456789abcdef01-" +                //nolint:gosec
 		"abcdef0123456789abcdef0123456789ab"
-	figmaPAT := "figd_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"              //nolint:gosec
-	flyioToken := "fo1_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"             //nolint:gosec
-	planetscaleToken := "pscale_tkn_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN" //nolint:gosec
-	replicateToken := "r8_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqR"      //nolint:gosec
+	figmaPAT := "figd_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"                           //nolint:gosec
+	flyioToken := "fo1_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"                          //nolint:gosec
+	planetscaleToken := "pscale_tkn_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmN"             //nolint:gosec
+	replicateToken := "r8_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqR"                   //nolint:gosec
 	sentryToken := "sntrys_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHi" //nolint:gosec
-	atlassianToken := "ATATT" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwX"            //nolint:gosec
-	renderAPIKey := "rnd_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHi"                //nolint:gosec
-	ldSDKKey := "sdk-" + "a1b2c3d4-e5f6-7890-abcd-ef1234567890"                   //nolint:gosec
-	ldAPIKey := "api-" + "a1b2c3d4-e5f6-7890-abcd-ef1234567890"                   //nolint:gosec
+	atlassianToken := "ATATT" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwX"           //nolint:gosec
+	renderAPIKey := "rnd_" + "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHi"                             //nolint:gosec
+	ldSDKKey := "sdk-" + "a1b2c3d4-e5f6-7890-abcd-ef1234567890"                                //nolint:gosec
+	ldAPIKey := "api-" + "a1b2c3d4-e5f6-7890-abcd-ef1234567890"                                //nolint:gosec
 
 	tests := map[string]struct {
 		ruleID    string
@@ -190,25 +190,25 @@ func TestBuiltinPatternMatches(t *testing.T) { //nolint:funlen,gocognit
 		},
 		"slack bot token": {
 			ruleID:    "slack-bot-token",
-			input:     `SLACK_BOT_TOKEN_EXAMPLE`,
+			input:     "xox" + "b-000000000000-000000000000-abcdefghijklmnopqrstuvwx",
 			wantMatch: true,
 		},
 		"slack webhook": { //nolint:gosec
 			ruleID:    "slack-webhook",
-			input:     `https://example.invalid/slack-webhook`,
+			input:     "https://hooks." + "slack.com/services/T00000000/B00000000/abcdefghijklmnopqrstuvwx",
 			wantMatch: true,
 		},
 		"stripe live key": { //nolint:gosec
 			ruleID:    "stripe-live-secret",
-			input:     `STRIPE_LIVE_KEY_EXAMPLE`,
+			input:     "sk_" + "live_" + "abcdefghijklmnopqrstuvwx",
 			wantMatch: true,
-			wantGroup: "STRIPE_LIVE_KEY_EXAMPLE",
+			wantGroup: "sk_" + "live_" + "abcdefghijklmnopqrstuvwx",
 		},
 		"stripe test key": {
 			ruleID:    "stripe-test-secret",
-			input:     `STRIPE_TEST_KEY_EXAMPLE`, //nolint:gosec
+			input:     "sk_" + "test_" + "abcdefghijklmnopqrstuvwx", //nolint:gosec
 			wantMatch: true,
-			wantGroup: "STRIPE_TEST_KEY_EXAMPLE", //nolint:gosec
+			wantGroup: "sk_" + "test_" + "abcdefghijklmnopqrstuvwx", //nolint:gosec
 		},
 		"stripe restricted live": { //nolint:gosec
 			ruleID:    "stripe-live-restricted",

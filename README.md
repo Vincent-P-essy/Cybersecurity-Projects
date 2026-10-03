@@ -182,6 +182,5 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 ##  Contact
 
-- Email: https://github.com/Vincent-P-essy
 - GitHub: https://github.com/Vincent-P-essy
 
