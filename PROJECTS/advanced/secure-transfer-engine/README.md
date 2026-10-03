@@ -5,6 +5,12 @@ every accepted transfer has a matching debit and credit, retries do not debit
 twice, concurrent requests cannot overdraw an account, and a restart retains
 both balances and idempotency keys.
 
+## Preview
+
+![Transfer ledger demonstration with accounting and duplicate-request checks](docs/screenshots/terminal-demo.png)
+
+Actual terminal execution of the repository’s bundled demonstration.
+
 ## Execution capture
 
 ![Secure Transfer Engine demonstration and passing tests](docs/assets/execution.png)

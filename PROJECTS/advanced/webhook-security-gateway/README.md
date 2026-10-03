@@ -5,6 +5,12 @@ identifier to its signature, and commits the receipt and delivery queue in one
 SQLite transaction. A worker that stops before acknowledgement leaves an event
 that can be claimed again after its lease expires.
 
+## Preview
+
+![Webhook validation, duplicate handling and acknowledgement recovery](docs/screenshots/terminal-demo.png)
+
+Actual terminal execution of the repository’s bundled demonstration.
+
 ## Execution capture
 
 ![Webhook Security Gateway demonstration and passing tests](docs/assets/execution.png)

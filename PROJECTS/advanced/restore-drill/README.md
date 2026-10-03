@@ -5,6 +5,12 @@ creates a consistent SQLite snapshot, authenticates its manifest with HMAC-SHA-2
 then restores a copy into an isolated temporary directory and checks database
 integrity, schema, row counts and optional business invariants.
 
+## Preview
+
+![Snapshot restoration, business checks and tamper rejection](docs/screenshots/terminal-demo.png)
+
+Actual terminal execution of the repository’s bundled demonstration.
+
 ## Execution capture
 
 ![Restore Drill demonstration and passing tests](docs/assets/execution.png)

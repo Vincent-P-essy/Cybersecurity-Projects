@@ -19,6 +19,18 @@
 
 ---
 
+## Local demonstrations
+
+| Project | Demonstration |
+|---|---|
+| [Secure Transfer Engine](PROJECTS/advanced/secure-transfer-engine) | Java transfer ledger and duplicate-request handling |
+| [Webhook Security Gateway](PROJECTS/advanced/webhook-security-gateway) | Authentication, replay rejection and delivery acknowledgement |
+| [Restore Drill](PROJECTS/advanced/restore-drill) | Restore from a snapshot, verify business invariants and reject tampering |
+
+![Java transfer ledger demonstration](PROJECTS/advanced/secure-transfer-engine/docs/screenshots/terminal-demo.png)
+
+These previews come from the bundled demonstrations. Each linked project documents its own prerequisites and launch instructions.
+
 ##  About Me
 
 Computer Science student (L3) passionate about cybersecurity, systems, and low-level programming.
@@ -47,7 +59,7 @@ ML-powered threat detection engine analyzing nginx logs in real time with a 3-mo
 ###  Bug Bounty Platform
 [ View Project](./PROJECTS/advanced/bug-bounty-platform) • [ Live Demo](https://bugbounty.Vincent-P-essy.com)
 
-Production-ready enterprise bug bounty platform with RBAC (Researcher / Company / Admin), CVSS scoring, report triage, bounty award workflows, and full audit logging. ~7,000 lines of backend.
+Bug bounty platform with RBAC (Researcher / Company / Admin), CVSS scoring, report triage, bounty award workflows, and full audit logging. ~7,000 lines of backend.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
@@ -170,6 +182,6 @@ Multi-service honeypot emulating SSH, HTTP, and FTP to capture attacker credenti
 
 ##  Contact
 
-- Email: vincent.plessy12@gmail.com
+- Email: https://github.com/Vincent-P-essy
 - GitHub: https://github.com/Vincent-P-essy
 
