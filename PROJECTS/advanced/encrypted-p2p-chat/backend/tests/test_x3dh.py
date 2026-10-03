@@ -61,6 +61,7 @@ class TestX3DH:
 
         bob_bundle = PreKeyBundle(
             identity_key = bob_ik_public,
+            identity_key_ed25519 = bob_ik_public_ed,
             signed_prekey = bob_spk_public,
             signed_prekey_signature = bob_spk_sig,
             one_time_prekey = bob_opk_public
@@ -107,6 +108,7 @@ class TestX3DH:
 
         bob_bundle = PreKeyBundle(
             identity_key = bob_ik_public,
+            identity_key_ed25519 = bob_ik_public_ed,
             signed_prekey = bob_spk_public,
             signed_prekey_signature = bob_spk_sig,
             one_time_prekey = None

@@ -4,6 +4,7 @@ Pytest configuration and fixtures for all tests
 """
 
 import asyncio
+import os
 from uuid import uuid4
 from typing import Any
 from collections.abc import AsyncGenerator
@@ -17,6 +18,12 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.orm import sessionmaker
 from webauthn.helpers import bytes_to_base64url
+
+# Synthetic settings for SQLite and cryptography tests; no external service is used.
+os.environ['ENV'] = 'testing'
+os.environ['DEBUG'] = 'false'
+os.environ['SECRET_KEY'] = 'synthetic-test-only-session-key-not-for-deployment'
+os.environ['SURREAL_PASSWORD'] = 'synthetic-test-only-database-password'
 
 from app.models.User import User
 from app.models.IdentityKey import IdentityKey

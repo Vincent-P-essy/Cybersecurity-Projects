@@ -23,6 +23,7 @@ Connects to:
 
 import uuid
 from datetime import datetime, UTC
+from unittest.mock import AsyncMock
 
 import pytest
 
@@ -172,13 +173,20 @@ async def test_model_status(db_client) -> None:
 
 
 @pytest.mark.asyncio
-async def test_retrain_returns_202(db_client) -> None:
+async def test_retrain_returns_202(db_client, monkeypatch) -> None:
     """
     POST /models/retrain returns 202 Accepted with a job ID.
     """
+    retrain_job = AsyncMock()
+    monkeypatch.setattr("app.api.models_api._retrain_from_db", retrain_job)
     response = await db_client.post("/models/retrain")
 
     assert response.status_code == 202
     data = response.json()
     assert data["status"] == "accepted"
     assert len(data["job_id"]) == 32
+    retrain_job.assert_awaited_once()
+    job_id, session_factory = retrain_job.await_args.args
+    assert job_id == data["job_id"]
+    async with session_factory() as session:
+        assert session.bind is not None

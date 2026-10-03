@@ -92,6 +92,7 @@ async def db_client(db_engine) -> AsyncIterator[AsyncClient]:
     )
 
     test_app = create_app()
+    test_app.state.session_factory = factory
 
     async def override_get_session() -> AsyncIterator[AsyncSession]:
         async with factory() as session:

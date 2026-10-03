@@ -11,12 +11,6 @@
 #include "include/cli/argsParse.hpp"
 
 int main(int argc, char **argv) {
-	/* initialize stats */
-	Stats stats;
-	/* initialize capture */
-	PcapCapture capture;
-	capture.initialize();
-
 	/* initializing the command line parser */
 	argsParser parser(argc, argv);
 
@@ -25,7 +19,11 @@ int main(int argc, char **argv) {
 		parser.print_help();
 		return 0;
 	}
+	/* Capture resources are unnecessary when displaying help. */
+	Stats stats;
+	PcapCapture capture;
 	if (parser.vm.contains("interfaces")) {
+		capture.initialize();
 		capture.print_interfaces();
 		return 0;
 	}

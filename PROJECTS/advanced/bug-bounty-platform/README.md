@@ -21,8 +21,6 @@
 
 > Production-ready enterprise bug bounty platform. ~7,000 lines of backend across three role types, CVSS scoring, full report triage, and bounty award workflows with complete audit logging.
 
-*Security theory, architecture deep-dive, and implementation walkthrough are in the [learn modules](#learn).*
-
 ## Features
 
 - **3-role RBAC** — Researcher, Company, Admin with JWT refresh token rotation and multi-device session management
@@ -76,16 +74,6 @@ Report closed → audit log entry created
 **Backend:** FastAPI, SQLAlchemy 2.0, PostgreSQL 18, Redis 7, Alembic, Argon2id, JWT (~7,000 lines)
 
 **Frontend:** React 19, TypeScript 5.9, Vite 7, React Router 7.1, TanStack Query v5, Zustand
-
-## Learn
-
-| Module | Topic |
-|--------|-------|
-| [00 - Overview](learn/00-OVERVIEW.md) | Prerequisites and quick start |
-| [01 - Concepts](learn/01-CONCEPTS.md) | Bug bounty programs and vulnerability disclosure |
-| [02 - Architecture](learn/02-ARCHITECTURE.md) | System design and data flow |
-| [03 - Implementation](learn/03-IMPLEMENTATION.md) | Code walkthrough |
-| [04 - Challenges](learn/04-CHALLENGES.md) | Extension ideas and exercises |
 
 ## License
 

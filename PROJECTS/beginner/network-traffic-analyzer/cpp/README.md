@@ -74,6 +74,23 @@ just run
 - CMake
 
 # Setup
+
+For a source build, use CMake 3.31+, a C++20 compiler with `std::format`
+support (verified with GCC 14), Boost.Program_options, libpcap development
+headers, and Git. CMake downloads FTXUI 5.0.0 during configuration.
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure
+./build/network-traffic-analyzer --help
+```
+
+On Linux, the two CLI regression tests force interface discovery to fail and
+verify that `--help` and `-h` still succeed. Displaying help and reading an
+offline PCAP do not require interface discovery. Live capture still requires
+the permissions described above.
+
 ## 1. clone the repo then
 ```bash
 cd network-traffic-analyzer

@@ -12,7 +12,7 @@ wheels = [
 ]
 
 [[package]]
-name = "caesar-cipher"
+name = "caesar-salad-cipher"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
